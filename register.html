@@ -8,34 +8,97 @@
     <script src="js/leancloud.js"></script>
     <script src="js/auth.js" defer></script>
 </head>
-<body>
+<body class="bg">
 
-<h2>注册</h2>
+  <div class="glass-card scroll">
 
-<input type="text" id="reg-username" placeholder="用户名（必填）">
-<br>
-<input type="password" id="reg-password" placeholder="密码（必填）">
-<br><br>
+    <div class="avatar" style="background-image: url('image/avatar.jpg');"></div>
+    <h2 class="page-title">注册</h2>
 
-<input type="text" id="reg-nickname" placeholder="昵称">
-<br>
-<input type="email" id="reg-email" placeholder="邮箱">
-<br>
-<input 输入="text" id="reg-phone" placeholder="手机号">
-<br>
-<input type="text" id="reg-gender" placeholder="性别">
-<br>
-<input type="text" id="reg-school" placeholder="学校">
-<br>
-<input type="text" id="reg-major" placeholder="专业">
-<br>
-<input type="text" id="reg-signature" placeholder="个性签名">
-<br><br>
+    <!-- 必填区 -->
+    <div class="input-box">
+      <span class="icon">👤</span>
+      <input 输入="text" id="reg-username" placeholder="用户名（必填）">
+    </div>
 
-<button id="register-btn">注册</button>
+    <div class="input-box">
+      <span class="icon">🔒</span>
+      <input type="password" id="reg-password" placeholder="密码（必填）">
+    </div>
 
+    <!-- 展开按钮 -->
+    <div class="more-btn" id="toggle-more">展开更多信息 ⌵</div>
 
-<p><a href="index.html">已有账号？去登录</a></p>
+    <!-- 扩展信息区（默认隐藏） -->
+    <div id="more-info" style="display: none;">
+
+      <div class="input-box">
+        <span class="icon">⭐</span>
+        <input type="text" id="reg-nickname" placeholder="昵称">
+      </div>
+
+      <div class="input-box">
+        <span class="icon">✉</span>
+        <input type="email" id="reg-email" placeholder="邮箱">
+      </div>
+
+      <div class="input-box">
+        <span class="icon">📱</span>
+        <input type="text" id="reg-phone" placeholder="手机号">
+      </div>
+
+      <!-- 性别下拉框 -->
+      <div class="input-box select-box">
+        <span class="icon">⚧</span>
+        <select id="reg-gender">
+          <option value="">请选择性别</option>
+          <option value="男">男</option>
+          <option value="女">女</option>
+          <option value="双性">双性</option>
+        </select>
+      </div>
+
+      <div class="input-box">
+        <span class="icon">🏫</span>
+        <input type="text" id="reg-school" placeholder="学校">
+      </div>
+
+      <div class="input-box">
+        <span class="icon">📘</span>
+        <input type="text" id="reg-major" placeholder="专业">
+      </div>
+
+      <!-- 多行签名 -->
+      <div class="textarea-box">
+        <textarea id="reg-signature" placeholder="个性签名（可多行输入）"></textarea>
+      </div>
+
+    </div>
+
+    <button id="register-btn">注 册</button>
+
+    <div class="links single">
+      <a href="index.html">返回登录</a>
+    </div>
+
+  </div>
+
+  <!-- 控制展开收起 -->
+  <script>
+    const btn = document.getElementById("toggle-more");
+    const area = document.getElementById("more-info");
+
+    btn.onclick = () => {
+      if (area.style.display === "none") {
+        area.style.display = "block";
+        btn.innerText = "收起更多信息 ⌃";
+      } else {
+        area.style.display = "none";
+        btn.innerText = "展开更多信息 ⌵";
+      }
+    };
+  </script>
 
 </body>
+
 </html>
