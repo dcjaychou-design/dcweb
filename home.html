@@ -1,22 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>主页</title>
+  <meta charset="UTF-8">
+  <title>用户信息管理</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.13.2/dist/av-min.js"></script>
+  <script src="js/leancloud.js"></script>
+  <script src="js/home.js" defer></script>
+
+  <style>
+    body { font-family: Arial, sans-serif; padding: 16px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background: #f2f2f2; }
+    。ops button { margin-right: 6px; }
+    #edit-area { display: none; border: 1px solid #ddd; padding: 12px; margin-top: 12px; }
+    input { padding: 6px; margin: 4px 6px 4px 0; width: 180px; }
+  </style>
 </head>
 <body>
 
-<h2>欢迎，您已成功登录</h2>
-<p>这里以后放个人信息、增删改查功能</p>
+<h2>用户信息管理</h2>
+	
+<div id="current-user-box" style="margin:10px 0;padding:10px;border:1px solid #ccc;display:none;">
+  <b>当前登录用户：</b>
+  <span id="current-username"></span>
+</div>
 
-<button onclick="logout()">退出登录</button>
 
-<script>
-function logout() {
-    localStorage.clear();
-    window.location.href = "index.html";
-}
-</script>
+<!-- 只按昵称搜索 -->
+<div>
+  <input id="search-nickname" placeholder="按昵称搜索">
+  <button id="search-btn">搜索</button>
+  <button id="refresh-btn">刷新全部</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>用户名</th>
+      <th>昵称</th>
+      <th>邮箱</th>
+      <th>手机号</th>
+      <th>性别</th>
+      <th>学校</th>
+      <th>专业</th>
+      <th>签名</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody id="user-table"></tbody>
+</table>
+
+<!-- 编辑区 -->
+<div id="edit-area">
+  <h3>编辑用户</h3>
+  <input id="e-username" disabled>
+  <input id="e-nickname" placeholder="昵称">
+  <input id="e-email" placeholder="邮箱">
+  <input id="e-phone" placeholder="手机号">
+  <input id="e-gender" placeholder="性别">
+  <input id="e-school" placeholder="学校">
+  <input id="e-major" placeholder="专业">
+  <input id="e-signature" placeholder="签名">
+  <br><br>
+  <button id="save-btn">保存更改</button>
+  <button id="cancel-btn">取消</button>
+</div>
+
+<br>
+<button onclick="location.href='index.html'">退出</button>
 
 </body>
 </html>
