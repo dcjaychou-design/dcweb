@@ -6,19 +6,35 @@
     <link rel="stylesheet" href="style/main.css">
     <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.13.2/dist/av-min.js"></script>
     <script src="js/leancloud.js"></script>
-    <script src="js/auth.js" defer></script>
+    <script src="js/auth.js" defer></script>  <!--  让前面两个先加载执行  -->
 </head>
-<body>
+<body class="bg">
 
-<h2>登录</h2>
+  <div class="glass-card">
 
-<input type="text" id="login-username" placeholder="用户名">
-<br>
-<input type="password" id="login-password" placeholder="密码">
-<br>
-<button id="login-btn">登录</button>
+    <div class="avatar" style="background-image: url('image/avatar.jpg');"></div>
+    <h2 class="page-title">登录</h2>
 
-<p><a href="register.html">没有账号？去注册</a></p>
+    <div class="input-box">
+      <span class="icon">👤</span>
+      <input type="text" id="login-username" placeholder="用户名">
+    </div>
+
+    <div class="input-box">
+      <span class="icon">🔒</span>
+      <input type="password" id="login-password" placeholder="登录密码">
+    </div>
+
+    <button id="login-btn">登 录</button>
+
+    <div class="links">
+      <a href="register.html">立即注册</a>
+      <a href="#">忘记密码</a>
+    </div>
+
+  </div>
 
 </body>
+
+
 </html>
