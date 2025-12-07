@@ -10,33 +10,33 @@ document.addEventListener("DOMContentLoaded", () => {
             const password = document.getElementById("reg-password").value; 
             const nickname = document.getElementById("reg-nickname").value;  
             const email = document.getElementById("reg-email").value; 
-            const phone = document。getElementById("reg-phone")。value; 
+            const phone = document.getElementById("reg-phone")。value; 
             const gender = document.getElementById("reg-gender").value;//性别 
             const school = document.getElementById("reg-school").value; 
-            const major = document.getElementById("reg-major")。value;
-            const signature = document。getElementById("reg-signature")。value;//个性签名
+            const major = document.getElementById("reg-major").value;
+            const signature = document.getElementById("reg-signature")。value;//个性签名
 
-            const UserAuth = AV.Object。extend("UserAuth");	//在leancloud中定义userauth
-            const query = new AV。Query("UserAuth");		//定义查询
+            const UserAuth1 = AV.Object.extend("UserAuth1");	//在leancloud中定义userauth
+            const query = new AV.Query("UserAuth1");		//定义查询
 
             // 检查是否已存在
             query.equalTo("username", username);
-            const exist = await query.first()。catch(() => null);
+            const exist = await query.first().catch(() => null);
 
             if (exist) {
                 alert("用户名已存在");
                 return;
             }
 
-            const user = new UserAuth();
+            const user = new UserAuth1();
             user.set("username", username);
             user.set("password", password);
 			user.set("nickname", nickname);
-			user。set("email"， email);
-			user。set("phone"， phone);
+			user.set("email"， email);
+			user.set("phone"， phone);
 			user.set("gender"， gender);
-			user。set("school"， school);
-			user。set("major"， major);
+			user.set("school"， school);
+			user.set("major"， major);
 			user.set("signature", signature);
 
 
@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (havelog) {
 		 havelog.onclick = async () => {			 
             const username = document.getElementById("login-username").value;
-            const password = document.getElementById("login-password")。value;
+            const password = document.getElementById("login-password").value;
 
-            const query = new AV.Query("UserAuth");
+            const query = new AV.Query("UserAuth1");
             query.equalTo("username"， username);
             query.equalTo("password"， password);
 
