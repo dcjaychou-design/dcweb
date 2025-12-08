@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", "PingFang SC", sans-serif;
+}
+
+body.bg {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../image/bg.jpg") no-repeat center center/cover;
+}
+
+/* 玻璃卡片 */
+.glass-card {
+  width: 380px;
+  padding: 40px 30px 32px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+/* 注册页可滚动 */
+.glass-card.scroll {
+  max-height: 88vh;
+  overflow-y: auto;
+}
+
+/* 头像 */
+.avatar {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.4);
+	background-size: contain;      /* 填充容器 */
+  background-position: center; /* 居中显示 */
+  background-repeat: no-repeat;
+}
+
+/* 输入区 */
+.input-box {
+  width: 100%;
+  height: 48px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.input-box .icon {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.input-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+	text-align: center; 
+}
+
+.input-box input::placeholder {
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+}
+
+
+/* 按钮 */
+button {
+  width: 100%;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  color: #2f6b5f;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(255,255,255,0.25);
+}
+
+/* 链接 */
+.links {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.links.single {
+  justify-content: center;
+}
+
+.links a {
+  color: rgba(255,255,255,0.9);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+.page-title {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.more-btn {
+  color: rgba(255,255,255,0.85);
+  font-size: 13px;
+  margin: 6px 0 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.select-box select {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+}
+
+.select-box option {
+  color: black;
+}
+
+.textarea-box textarea {
+  width: 100%;
+  min-height: 80px;
+  resize: none;
+  padding: 12px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.12);
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.textarea-box textarea::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
