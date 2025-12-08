@@ -12,13 +12,16 @@
 
   <div class="glass-card scroll">
 
-    <div class="avatar" style="background-image: url('image/avatar.jpg');"></div>
+    <!-- HTML结构 -->
+	<div class="avatar">
+	  <img src="image/avatar.jpg" alt="头像">
+	</div>
     <h2 class="page-title">注册</h2>
 
     <!-- 必填区 -->
     <div class="input-box">
       <span class="icon">👤</span>
-      <input type="text" id="reg-username" placeholder="用户名（必填）">
+      <input 输入="text" id="reg-username" placeholder="用户名（必填）">
     </div>
 
     <div class="input-box">
@@ -34,12 +37,12 @@
 
       <div class="input-box">
         <span class="icon">⭐</span>
-        <input type="text" id="reg-nickname" placeholder="昵称">
+        <input 输入="text" id="reg-nickname" placeholder="昵称">
       </div>
 
       <div class="input-box">
         <span class="icon">✉</span>
-        <input type="email" id="reg-email" placeholder="邮箱">
+        <input 输入="email" id="reg-email" placeholder="邮箱">
       </div>
 
       <div class="input-box">
@@ -60,7 +63,7 @@
 
       <div class="input-box">
         <span class="icon">🏫</span>
-        <input type="text" id="reg-school" placeholder="学校">
+        <input 输入="text" id="reg-school" placeholder="学校">
       </div>
 
       <div class="input-box">
@@ -89,11 +92,11 @@
     const area = document.getElementById("more-info");
 
     btn.onclick = () => {
-      if (area.style.display === "none") {
+      if (area。style。display === "none") {
         area.style.display = "block";
         btn.innerText = "收起更多信息 ⌃";
       } else {
-        area.style.display = "none";
+        area。style.display = "none";
         btn.innerText = "展开更多信息 ⌵";
       }
     };
